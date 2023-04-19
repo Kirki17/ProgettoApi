@@ -1,0 +1,15 @@
+<body class="m-2">
+    <h1>Prova Razze</h1>
+    <button *ngIf="vettoreDati==null" (click)="letturaDeiDati()" class="mb-2 btn btn-secondary">Clicca per leggere</button>
+    <div *ngIf="vettoreDati!=null" class="w-auto">
+        <div *ngFor="let dato of vettoreDati" class="card text-center border-black mb-3">
+            <img [src]="dato.image_link" class="card-img-top img-fluid ">
+            <div class="card-body container-fluid">
+                <button class="btn btn-outline-secondary">{{dato.name}}</button>
+            </div>
+        </div>
+    </div>
+    <p>{{stringa}}</p>
+    <!--<img  [src]="vettoreDati[1].image_link">-->
+</body>
+
