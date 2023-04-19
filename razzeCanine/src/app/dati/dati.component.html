@@ -1,15 +1,24 @@
 <body class="m-2">
     <h1>Prova Razze</h1>
-    <button *ngIf="vettoreDati==null" (click)="letturaDeiDati()" class="mb-2 btn btn-secondary">Clicca per leggere</button>
-    <div *ngIf="vettoreDati!=null" class="w-auto">
-        <div *ngFor="let dato of vettoreDati" class="card text-center border-black mb-3">
-            <img [src]="dato.image_link" class="card-img-top img-fluid ">
-            <div class="card-body container-fluid">
-                <button class="btn btn-outline-secondary">{{dato.name}}</button>
+    <button *ngIf="vettoreDati.length==0" (click)="letturaDeiDati()" class="mb-2 btn btn-secondary">Clicca per
+        leggere</button>
+    <div *ngIf="vettoreDati!=null" class="w-auto container text-center">
+        <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-2">
+            <div *ngFor="let dato of vettoreDati" class="col card text-center border-black mb-3">
+                <img [src]="dato.image_link" class="card-img-top img-fluid ">
+                <div class="card-body container-fluid">
+                    <button class="btn btn-outline-secondary">{{dato.name}}</button>
+                </div>
             </div>
         </div>
     </div>
     <p>{{stringa}}</p>
     <!--<img  [src]="vettoreDati[1].image_link">-->
-</body>
 
+    <button *ngIf="numeroPg>0" (click)="paginaPrecedente()"
+        class="mb-2 btn btn-secondary ms-0">Pagina
+        precedente</button>
+    <button *ngIf="altreRazze" (click)="paginaSuccessiva()"
+        class="mb-2 btn btn-secondary me-0">Pagina
+        successiva</button>
+</body>
