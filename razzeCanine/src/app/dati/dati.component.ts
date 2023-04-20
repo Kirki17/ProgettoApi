@@ -30,9 +30,12 @@ export class DatiComponent {
       } else { //dati arrivati correttamente
         this.stringa = ""; 
         this.vettoreDati = dati;
+        this.datiPronti = true; 
+
+        //controllo per pagina
         if(this.vettoreDati.length == 20){
           this.altreRazze = true; 
-        } else if(this.vettoreDati.length < 20){
+        } else if(this.vettoreDati.length < 20){ 
           this.altreRazze = false; 
         }
         console.log(this.vettoreDati);
@@ -42,10 +45,12 @@ export class DatiComponent {
 
   paginaSuccessiva(){
     this.numeroPg += 2;
+    this.datiPronti = false; 
     this.letturaDeiDati(); 
   }
   paginaPrecedente(){
     this.numeroPg -= 2;
+    this.datiPronti = false; 
     this.letturaDeiDati(); 
   }
 }
