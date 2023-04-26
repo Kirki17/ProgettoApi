@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ignoreElements } from 'rxjs';
 import { LetturaService } from '../common/lettura.service';
+
 
 @Component({
   selector: 'app-dati',
@@ -9,24 +10,30 @@ import { LetturaService } from '../common/lettura.service';
 })
 export class DatiComponent {
   vettoreDati: any[] = []; 
-  url: string; 
+  urlBase: string; 
   stringa: string; 
   altreRazze: boolean; 
   numeroPg: number = 0; 
   datiPronti: boolean; 
+  @Input() ricerca: string; 
 
   constructor(public leggi: LetturaService){
+    this.ricerca = "golden retriever";
     this.stringa = ""; 
     this.altreRazze = false; 
-    this.url = "https://api.api-ninjas.com/v1/dogs?name=dog";
+    this.urlBase = "https://api.api-ninjas.com/v1/dogs?name=";
     this.datiPronti = false; 
+    this.letturaDeiDati();
   }
 
   letturaDeiDati() {
     this.stringa = "In attesa dei dati";
-    this.leggi.getDati(this.url + "&offset=" + this.numeroPg +"0").subscribe(dati => {
-      if (typeof dati[0] === 'string' || dati[0] instanceof String) { //dati non arrivati 
+
+    this.leggi.getDati(this.urlBase +this.ricerca + "&offset=" + this.numeroPg +"0").subscribe(dati => {
+      if (typeof dati[0] === 'string' || dati[0] instanceof String || dati[0] == null) { //dati non arrivati 
         this.stringa = "Si è verificato un errore";
+        this.vettoreDati = []; 
+        this.datiPronti = false; 
       } else { //dati arrivati correttamente
         this.stringa = ""; 
         this.vettoreDati = dati;
@@ -52,5 +59,9 @@ export class DatiComponent {
     this.numeroPg -= 2;
     this.datiPronti = false; 
     this.letturaDeiDati(); 
+  }
+
+  info(razza: string){
+    console.log(razza); 
   }
 }

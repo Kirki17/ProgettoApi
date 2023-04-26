@@ -13,8 +13,6 @@ export class LetturaService {
   getDati(url: String): Observable<any> {
     return this.mioHttp.get(
       "" + url,
-      //"https://api.api-ninjas.com/v1/dogs?name=",
-      //"https://api.api-ninjas.com/v1/dogs?min_life_expectancy=10&offset=10",
       { headers: new HttpHeaders().set('X-Api-Key', 'lUv3vNT/qnShUCJmkKVsXg==c2Jh13Y5aetF7KKb') }
     ).pipe(
       catchError(this.handleError)

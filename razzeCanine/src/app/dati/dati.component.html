@@ -1,9 +1,11 @@
 <body class="m-2">
     <h1 class="text-center text-danger">Prova Razze</h1>
     <div class="d-flex justify-content-center">
-        <button *ngIf="vettoreDati.length==0" (click)="letturaDeiDati()"
-            class="mb-2 btn btn-warning">Clicca per
-            leggere</button>
+        <form>
+        <input [(ngModel)]="ricerca" id="search" type="text" [ngModelOptions]="{standalone: true}">
+        <button (click)="letturaDeiDati()"
+            class="mb-2 btn btn-warning">Cerca</button>
+        </form>
     </div>
     <p *ngIf="!datiPronti" class="d-flex justify-content-center ">{{stringa}}</p>
     <div *ngIf="vettoreDati.length!=0 && datiPronti" class="w-auto container text-center">
@@ -11,7 +13,8 @@
             <div *ngFor="let dato of vettoreDati" class="col card text-center border-black mb-3 bg-warning bg-opacity-50">
                 <img [src]="dato.image_link" class="card-img-top img-fluid rounded mt-1">
                 <div class="card-body container-fluid">
-                    <button class="btn btn-outline-danger">{{dato.name}}</button>
+                    <button routerLink="info" (click)="info(dato.name)"class="btn btn-outline-danger">{{dato.name}}</button>
+                    <!---->
                 </div>
             </div>
         </div>
@@ -28,5 +31,7 @@
                 successiva</button>
         </div>
     </div>
+
+
 
 </body>
