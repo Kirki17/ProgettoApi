@@ -1,1 +1,8 @@
-<p>header works!</p>
+<h1 class="text-center text-danger">Prova Razze</h1>
+<div class="d-flex justify-content-center">
+    <form>
+        <input [(ngModel)]="ricerca" id="search" type="text" [ngModelOptions]="{standalone: true}">
+        <button routerLink="risposta" (click)="cerca()" class="mb-2 btn btn-warning">Cerca</button>
+    </form>
+</div>
+<p *ngIf="!datiPronti" class="d-flex justify-content-center ">{{stringa}}</p>
