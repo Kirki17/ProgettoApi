@@ -1,17 +1,13 @@
 <body class="m-2">
-    <!--<h1 class="text-center text-danger">Prova Razze</h1>
+    <h1 class="text-center text-danger">Prova Razze</h1>
     <div class="d-flex justify-content-center">
         <form>
         <input [(ngModel)]="ricerca" id="search" type="text" [ngModelOptions]="{standalone: true}">
-        <button (click)="letturaDeiDati()"
+        <button routerLink="ricerca" (click)="letturaDeiDati()"
             class="mb-2 btn btn-warning">Cerca</button>
         </form>
     </div>
-    <p *ngIf="!datiPronti" class="d-flex justify-content-center ">{{stringa}}</p>-->
-
-    <div>
-        <app-header (out)="ricerca($event)"></app-header>
-    </div> 
+    <p *ngIf="!datiPronti" class="d-flex justify-content-center ">{{stringa}}</p>
 
     <div *ngIf="vettoreDati.length!=0 && datiPronti" class="w-auto container text-center">
         <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-2">
@@ -21,20 +17,19 @@
                 <div class="card-body container-fluid">
                     <button routerLink="info" (click)="info(dato.name)"
                         class="btn btn-outline-danger">{{dato.name}}</button>
-                    <!---->
                 </div>
             </div>
         </div>
     </div>
     <!--<img  [src]="vettoreDati[1].image_link">-->
 
-    <div *ngIf="datiPronti">
+    <div *ngIf="datiPronti" class="d-flex">
         <div class="d-flex align-items-start flex-column">
             <button *ngIf="numeroPg>0" (click)="paginaPrecedente()" class="mb-2 btn btn-secondary ms-0">Pagina
                 precedente</button>
         </div>
-        <div class="d-flex align-items-end flex-column">
-            <button *ngIf="altreRazze" (click)="paginaSuccessiva()" class="mb-2 btn btn-secondary">Pagina
+        <div class="flex-column me-5">
+            <button *ngIf="altreRazze" (click)="paginaSuccessiva()" class=" mb-2 btn btn-secondary">Pagina
                 successiva</button>
         </div>
     </div>

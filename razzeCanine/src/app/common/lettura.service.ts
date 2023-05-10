@@ -2,13 +2,16 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { catchError, throwError } from 'rxjs';
+import { Dog } from '../dog';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LetturaService {
 
-  constructor(private mioHttp: HttpClient) { }
+  private currentDog!: Dog; 
+
+  constructor(private mioHttp: HttpClient) {}
 
   getDati(url: String): Observable<any> {
     return this.mioHttp.get(
@@ -33,5 +36,13 @@ export class LetturaService {
         `Backend returned code ${error.status}, body was: `, error.error);
         return [];
     }
+  }
+
+  getCurrentDog(): Dog{
+    return this.currentDog; 
+  }
+
+  setCurrentDog(dog: Dog){
+    this.currentDog = dog; 
   }
 }

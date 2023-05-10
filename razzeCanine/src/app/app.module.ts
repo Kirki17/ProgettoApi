@@ -7,14 +7,12 @@ import { DatiComponent } from './dati/dati.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { InfoComponent } from './info/info.component';
-import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DatiComponent,
-    InfoComponent,
-    HeaderComponent
+    InfoComponent
   ],
   imports: [
     BrowserModule, 
