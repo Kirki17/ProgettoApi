@@ -1,9 +1,10 @@
-<body class="m-2">
-    <div class="bg-info bg-opacity-75 rounded">
-        <h1 class="text-center text-primary">Prova Razze</h1>
-        <div class="d-flex justify-content-center">
+<body>
+    <div class="bg-info bg-opacity-75 rounded fixed-top position-relative">
+        <h1 class="text-center text-primary">Razze</h1>
+        <div class="d-flex justify-content-center align-self-center">
             <form>
-                <input [(ngModel)]="ricerca" id="search" type="text" [ngModelOptions]="{standalone: true}" >
+                <input type="image" id="filtro" src="https://cdn-icons-png.flaticon.com/512/3161/3161370.png">
+                <input [(ngModel)]="ricerca" id="search" type="text" [ngModelOptions]="{standalone: true}" class="rounded m-2">
                 <button routerLink="ricerca" (click)="letturaDeiDati()" class="mb-2 btn btn-outline-primary">Cerca</button>
             </form>
         </div>

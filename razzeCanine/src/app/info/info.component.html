@@ -1,132 +1,130 @@
-<div class="position-relative">
-    <div class="card p-1 mx-auto border border-4 border-info bg-info bg-opacity-25" style="height: 400px">
-        <div class="card-body position-relative top-0">
+<div class="mx-2">
+    <div class="card mx-auto  border border-4 border-primary bg-info bg-opacity-25">
+        <div class="card-body">
             <h1 class="card-title text-center">{{dog.name}}</h1>
         </div>
-        <div class="position-absolute start-0" style="width:45%"> <!--Img + nome-->
-            <img src="{{dog.image_link}}" class="img-fluid rounded border border-2 border-info">
-        </div>
-
-        <div class="border border-black position-absolute top-50 end-0" style="width: 55%;">
-            <div class="container text-center border border-primary">
-                <div class="row">
-                    <div class="col">
-                        <h1>Generale</h1>
+        <div>
+            <div> <!--Img + nome-->
+                <div class="d-flex mb-2"> <!--Image + General-->
+                    <img src="{{dog.image_link}}" style="width: 49%" class="ms-1 img-fluid rounded border border-info">
+                    <div style="width:49%" class="container text-center border border-info rounded">
+                        <div class="row">
+                            <div class="col m-2">
+                                <h1>General</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Barking: {{dog.barking}}</p>
+                            </div>
+                            <div class="col">
+                                <p>Coat length: {{dog.coat_length}}</p>
+                            </div>
+                            <div class="col">
+                                <p>Drooling: {{dog.drooling}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Energy: {{dog.energy}}</p>
+                            </div>
+                            <div class="col">
+                                <p>Grooming: {{dog.grooming}}</p>
+                            </div>
+                            <div class="col">
+                                <p>Playfulness: {{dog.playfulness}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Protectiveness: {{dog.protectiveness}}</p>
+                            </div>
+                            <div class="col">
+                                <p>Shedding: {{dog.shedding}}</p>
+                            </div>
+                            <div class="col">
+                                <p>Trainability: {{dog.trainability}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Min life expectancy: {{dog.min_life_expectancy}}</p>
+                            </div>
+                            <div class="col">
+                                <p>Max life expectancy: {{dog.max_life_expectancy}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <p>Barking: {{dog.barking}}</p>
-                    </div>
-                    <div class="col">
-                        <p>Coat length: {{dog.coat_length}}</p>
-                    </div>
-                    <div class="col">
-                        <p>Drooling: {{dog.drooling}}</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <p>Energy: {{dog.energy}}</p>
-                    </div>
-                    <div class="col">
-                        <p>Grooming: {{dog.grooming}}</p>
-                    </div>
-                    <div class="col">
-                        <p>Playfulness: {{dog.playfulness}}</p>
+                <div class="d-flex mb-2"> <!--Goodness-->
+                    <div class="container text-center border border-info rounded">
+                        <div class="row">
+                            <div class="col m-2">
+                                <h1>Goodness</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Good with children: {{dog.good_with_children}}</p>
+                            </div>
+                            <div class="col">
+                                <p>Good with other dogs: {{dog.good_with_other_dogs}}</p>
+                            </div>
+                            <div class="col">
+                                <p>Good with strangers: {{dog.good_with_strangers}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <p>Protectiveness: {{dog.protectiveness}}</p>
+                <div class="d-flex mb-2"> <!--Weight e Height-->
+                    <div class="container text-center border border-info rounded" style="width: 49%">
+                        <div class="row">
+                            <div class="col m-2">
+                                <h1>Weight</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Min heigth male: {{dog.min_weight_male}}</p>
+                            </div>
+                            <div class="col">
+                                <p>Max heigth male: {{dog.max_weight_male}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Min heigth female: {{dog.min_weight_female}}</p>
+                            </div>
+                            <div class="col">
+                                <p>Max heigth female: {{dog.max_weight_female}}</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col">
-                        <p>Shedding: {{dog.shedding}}</p>
-                    </div>
-                    <div class="col">
-                        <p>Trainability: {{dog.trainability}}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="container text-center border border-danger">
-                <div class="row">
-                    <div class="col">
-                        <h1>Goodness</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <p>Good with children: {{dog.good_with_children}}</p>
-                    </div>
-                    <div class="col">
-                        <p>Good with children: {{dog.good_with_children}}</p>
-                    </div>
-                    <div class="col">
-                        <p>Good with strangers: {{dog.good_with_strangers}}</p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="container text-center border border-warning">
-                <div class="row">
-                    <div class="col">
-                        <h1>Life</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <p>Min life expectancy: {{dog.min_life_expectancy}}</p>
-                    </div>
-                    <div class="col">
-                        <p>Max life expectancy: {{dog.max_life_expectancy}}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="container text-center border border-black">
-                <div class="row">
-                    <div class="col">
-                        <h1>Weight</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <p>Min heigth male: {{dog.min_weight_male}}</p>
-                    </div>
-                    <div class="col">
-                        <p>Max heigth male: {{dog.max_weight_male}}</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <p>Min heigth female: {{dog.min_weight_female}}</p>
-                    </div>
-                    <div class="col">
-                        <p>Max heigth female: {{dog.max_weight_female}}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="container text-center border border-black">
-                <div class="row">
-                    <div class="col">
-                        <h1>Height</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <p>Min height male: {{dog.min_height_male}}</p>
-                    </div>
-                    <div class="col">
-                        <p>Max height male: {{dog.max_height_male}}</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <p>Min height female: {{dog.min_height_female}}</p>
-                    </div>
-                    <div class="col">
-                        <p>Max height female: {{dog.max_height_female}}</p>
+                    <div class="container text-center border border-info rounded" style="width: 49%">
+                        <div class="row">
+                            <div class="col m-2">
+                                <h1>Height</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Min height male: {{dog.min_height_male}}</p>
+                            </div>
+                            <div class="col">
+                                <p>Max height male: {{dog.max_height_male}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Min height female: {{dog.min_height_female}}</p>
+                            </div>
+                            <div class="col">
+                                <p>Max height female: {{dog.max_height_female}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
