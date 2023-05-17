@@ -8,12 +8,14 @@ import { Dog } from '../dog';
   styleUrls: ['./info.component.css'],
 })
 export class InfoComponent {
+  dog: Dog; 
 
   constructor(public leggi: LetturaService){
+    this.dog = this.leggi.getCurrentDog(); 
   }
+
   ngOnInit(){
-    let dog: Dog; 
-    dog = this.leggi.getCurrentDog(); 
-    console.log(dog); 
+    this.dog = this.leggi.getCurrentDog(); 
+    console.log(this.dog); 
   }
 }
