@@ -1,13 +1,14 @@
 <body>
-    <div class="bg-info bg-opacity-75 rounded fixed-top position-relative">
+    <div class="bg-info bg-opacity-75 rounded sticky-top">
         <h1 class="text-center text-primary">Razze</h1>
-        <div class="d-flex justify-content-center align-self-center">
+        <div class="d-flex justify-content-center align-self-center position-relative">
             <form>
-                <input type="image" id="filtro" src="https://cdn-icons-png.flaticon.com/512/3161/3161370.png">
+                <input type="image" style="height: 30px;" class="img-fluid" src="https://cdn-icons-png.flaticon.com/512/3161/3161370.png">
                 <input [(ngModel)]="ricerca" id="search" type="text" [ngModelOptions]="{standalone: true}" class="rounded m-2">
                 <button routerLink="ricerca" (click)="letturaDeiDati()" class="mb-2 btn btn-outline-primary">Cerca</button>
             </form>
         </div>
+        <button routerLink="login" (click)="login()" class="mb-2 btn btn-outline-primary position-absolute top-0 end-0 m-3">Cerca</button>
     </div> 
     <p *ngIf="!datiPronti" class="d-flex justify-content-center ">{{stringa}}</p>
 

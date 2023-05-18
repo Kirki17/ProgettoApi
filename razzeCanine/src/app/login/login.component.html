@@ -1,0 +1,15 @@
+<div class="h-100 align-items-center bg-info">
+    <div class="container justify-content-center align-self-center border w-50">
+        <div class="justify-content-between d-flex mb-2">
+            <label for="password" class="form-label align-self-center">Password</label>
+            <input type="password" class="align-self-center" id="password" [(ngModel)]="password">
+        </div>
+        <div class="justify-content-between d-flex mb-2">
+            <label for="nomeUtente" class="form-label align-self-center">Nome utente</label>
+            <input type="text" class="align-self-center" id="nomeUtente" [(ngModel)]="username">
+        </div>
+        <div class="justify-content-center d-flex">
+            <button (click)="abilita()" class="align-self-center btn btn-outline-primary">Login</button>
+        </div>
+    </div>
+</div>

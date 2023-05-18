@@ -82,4 +82,8 @@ export class DatiComponent {
     this.datiPronti = false;
     this.vettoreDati =[]; 
   }
+
+  login(){
+    this.datiPronti = false; 
+  }
 }
