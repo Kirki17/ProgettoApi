@@ -8,13 +8,15 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { InfoComponent } from './info/info.component';
 import { LoginComponent } from './login/login.component';
+import { CaniComponent } from './cani/cani.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DatiComponent,
     InfoComponent,
-    LoginComponent
+    LoginComponent,
+    CaniComponent
   ],
   imports: [
     BrowserModule, 
