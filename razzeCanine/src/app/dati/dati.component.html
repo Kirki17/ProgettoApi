@@ -1,21 +1,30 @@
 <body>
-    <div class="bg-info bg-opacity-75 rounded sticky-top">
+    <div class="bg-info bg-opacity-75 rounded sticky-top mb-4"> <!--Header-->
         <h1 class="text-center text-primary">Razze</h1>
         <div class="d-flex justify-content-center align-self-center position-relative">
             <form>
-                <input type="image" style="height: 30px;" class="img-fluid" src="https://cdn-icons-png.flaticon.com/512/3161/3161370.png">
-                <input [(ngModel)]="ricerca" id="search" type="text" [ngModelOptions]="{standalone: true}" class="rounded m-2">
-                <button routerLink="ricerca" (click)="letturaDeiDati()" class="mb-2 btn btn-outline-primary">Cerca</button>
+                <input type="image" style="height: 30px;" class="img-fluid"
+                    src="https://cdn-icons-png.flaticon.com/512/3161/3161370.png">
+                <input [(ngModel)]="ricerca" id="search" type="text" [ngModelOptions]="{standalone: true}"
+                    class="rounded m-2">
+                <button routerLink="ricerca" (click)="letturaDeiDati()"
+                    class="mb-2 btn btn-outline-primary">Cerca</button>
             </form>
         </div>
-        <button routerLink="login" (click)="login()" class="mb-2 btn btn-outline-primary position-absolute top-0 end-0 m-3">Cerca</button>
-    </div> 
+        <div *ngIf="loginCheck; else notLog">
+            <button class="mb-2 btn btn-outline-primary position-absolute top-0 end-0 m-3">{{account}}</button>
+        </div>
+        <ng-template #notLog>
+            <button routerLink="login" (click)="login()"
+                class="mb-2 btn btn-outline-primary position-absolute top-0 end-0 m-3">{{account}}</button>
+        </ng-template>
+    </div>
+
     <p *ngIf="!datiPronti" class="d-flex justify-content-center ">{{stringa}}</p>
 
     <div *ngIf="vettoreDati.length!=0 && datiPronti" class="w-auto container text-center">
-        <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-2">
-            <div *ngFor="let dato of vettoreDati"
-                class="col card text-center border-black mb-3 bg-primary bg-opacity-50">
+        <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-2 d-flex">
+            <div *ngFor="let dato of vettoreDati" class="col card text-center mb-3 bg-primary bg-opacity-50">
                 <img [src]="dato.image_link" class="card-img-top img-fluid rounded mt-1">
                 <div class="card-body container-fluid">
                     <button routerLink="info" (click)="info(dato.name)"
@@ -26,14 +35,16 @@
     </div>
     <!--<img  [src]="vettoreDati[1].image_link">-->
 
-    <div *ngIf="datiPronti" class="d-flex">
-        <div class="d-flex align-items-start flex-column">
-            <button *ngIf="numeroPg>0" (click)="paginaPrecedente()" class="mb-2 btn btn-secondary ms-0">Pagina
-                precedente</button>
-        </div>
-        <div class="flex-column justify-content-center align-items-center">
-            <button *ngIf="altreRazze" (click)="paginaSuccessiva()" class=" mb-2 btn btn-secondary">Pagina
-                successiva</button>
+    <div *ngIf="datiPronti" class="position-relative">
+        <div class="d-flex justify-content-between">
+            <div class="d-flex flex-column">
+                <button *ngIf="numeroPg>0" (click)="paginaPrecedente()" class="mb-2 ms-4 btn btn-primary">Pagina
+                    precedente</button>
+            </div>
+            <div class="flex-column justify-content-center align-items-center">
+                <button *ngIf="altreRazze" (click)="paginaSuccessiva()" class=" mb-2 me-4 btn btn-primary">Pagina
+                    successiva</button>
+            </div>
         </div>
     </div>
 </body>

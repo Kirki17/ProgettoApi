@@ -10,22 +10,45 @@ import { Dog } from '../dog';
   styleUrls: ['./dati.component.css']
 })
 export class DatiComponent {
-  @Input() vettoreDati: Dog[] = [];
+  vettoreDati: Dog[] = [];
   ricerca: string; 
   altreRazze: boolean;
   numeroPg: number = 0;
   datiPronti: boolean;
   urlBase: string; 
   stringa: string; 
+  account: string; 
+  loginCheck : boolean; 
+
+  ngOnInit(){
+    this.leggi.setPage('/');
+  }
+
+  ngDoCheck(){
+    console.log("Cambiamento");
+    this.loginCheck = this.leggi.getLogin();
+    this.datiPronti = this.leggi.getDatiPronti(); 
+    if(this.loginCheck){ //true = loggato
+      this.account = "Loggato"; 
+    } else {
+      this.account = "Login"; 
+    }
+  }
 
   constructor(public leggi: LetturaService) {
+    this.loginCheck = leggi.getLogin(); 
     this.altreRazze = false;
     this.datiPronti = false;
+    leggi.setDatiPronti(this.datiPronti); 
+    if(this.loginCheck){ //true = loggato
+      this.account = "Loggato"; 
+    } else {
+      this.account = "Login"; 
+    }
     //this.ricerca = "golden retriever";
     this.ricerca = "a";
     this.stringa = ""; 
     this.urlBase = "https://api.api-ninjas.com/v1/dogs?name=";
-    this.datiPronti = false; 
   }
 
   letturaDeiDati() {
@@ -36,6 +59,7 @@ export class DatiComponent {
         this.stringa = "Si è verificato un errore";
         this.vettoreDati = [];
         this.datiPronti = false;
+        this.leggi.setDatiPronti(this.datiPronti); 
       } else { //dati arrivati correttamente
         this.stringa = "";
         let id: number = 0; 
@@ -52,6 +76,7 @@ export class DatiComponent {
           this.altreRazze = true; 
         }
         this.datiPronti = true;
+        this.leggi.setDatiPronti(this.datiPronti); 
 
         console.log(this.vettoreDati);
       }
@@ -61,11 +86,14 @@ export class DatiComponent {
   paginaSuccessiva() {
     this.numeroPg += 2;
     this.datiPronti = false;
+    this.leggi.setDatiPronti(this.datiPronti); 
     this.letturaDeiDati();
   }
+  
   paginaPrecedente() {
     this.numeroPg -= 2;
     this.datiPronti = false;
+    this.leggi.setDatiPronti(this.datiPronti); 
     this.letturaDeiDati();
   }
 
@@ -80,10 +108,13 @@ export class DatiComponent {
     }
 
     this.datiPronti = false;
+    this.leggi.setDatiPronti(this.datiPronti); 
     this.vettoreDati =[]; 
   }
 
   login(){
     this.datiPronti = false; 
+    this.leggi.setDatiPronti(this.datiPronti); 
+    console.log(this.vettoreDati);
   }
 }

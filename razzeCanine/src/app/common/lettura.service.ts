@@ -11,12 +11,15 @@ export class LetturaService {
 
   private currentDog !: Dog; 
   private login : boolean; 
+  private page: any; 
+  private datiPronti: boolean; 
 
   constructor(private mioHttp: HttpClient) {
     this.currentDog = new Dog(2, 1, 1, 4, 3, 1, 2, 3, "https://api-ninjas.com/images/dogs/akita.jpg",
       28, 28, 14, 100, 130, 26, 26, 10, 70, 100, "Akita",
       3, 5, 3, 3);
       this.login = false;     
+      this.datiPronti = false; 
   }
 
   getDati(url: String): Observable<any> {
@@ -58,5 +61,21 @@ export class LetturaService {
 
   setLogin(login: boolean){
     this.login = login;
+  }
+
+  getPage():any{
+    return this.page;
+  }
+
+  setPage(lastPage: any){
+    this.page = lastPage;
+  }
+
+  getDatiPronti():boolean{
+    return this.datiPronti;
+  }
+
+  setDatiPronti(datiPronti:boolean){
+    this.datiPronti = datiPronti;
   }
 }

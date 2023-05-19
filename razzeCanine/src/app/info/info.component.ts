@@ -9,13 +9,20 @@ import { Dog } from '../dog';
 })
 export class InfoComponent {
   dog: Dog; 
+  login: boolean; 
 
   constructor(public leggi: LetturaService){
     this.dog = this.leggi.getCurrentDog(); 
+    this.login = this.leggi.getLogin();
   }
 
   ngOnInit(){
     this.dog = this.leggi.getCurrentDog(); 
+    this.leggi.setPage('info'); 
     console.log(this.dog); 
+  }
+
+  apri(){
+    window.open(this.dog.image_link);
   }
 }

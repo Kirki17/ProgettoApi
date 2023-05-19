@@ -1,4 +1,4 @@
-<div class="h-100 align-items-center bg-info">
+<!--<div class="h-100 align-items-center bg-info">
     <div class="container justify-content-center align-self-center border w-50">
         <div class="justify-content-between d-flex mb-2">
             <label for="password" class="form-label align-self-center">Password</label>
@@ -12,4 +12,41 @@
             <button (click)="abilita()" class="align-self-center btn btn-outline-primary">Login</button>
         </div>
     </div>
-</div>
+</div>-->
+
+<body>
+    <section class="vh-50 mt-3">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center pb-3">
+                        <div class="form-outline mb-4">
+                            <label for="user" class="form-label text-center fs-2 text pb-3 text-primary">Nome
+                                utente</label>
+                            <input type="email" id="user"
+                                class="border border-3 border-info bg-opacity-25 bg-info form-control form-control-lg"
+                                placeholder="Username" [(ngModel)]="username" />
+                            <!--<h1 class="form-text text-center fs-2 text pb-3 text-danger">User</h1>-->
+                        </div>
+
+                        <div class="form-outline mb-5">
+                            <label for="password" class="form-label text-center fs-2 text text-primary">Password</label>
+                            <input type="password" id="password"
+                                class="border border-3 border-info bg-opacity-25 bg-info form-control form-control-lg"
+                                placeholder="Password" [(ngModel)]="password" />
+                            <!--<h1 class="form-text text-center fs-2 text text-danger">Password</h1>-->
+                        </div>
+
+                        <div class="form-outline d-flex justify-content-around">
+                            <button class="btn btn-outline-primary btn-lg btn-block" type="submit"
+                                (click)="login()">Login</button>
+                            <button class="btn btn-outline-primary btn-lg btn-block" type="submit"
+                                (click)="register()">Register</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
