@@ -10,7 +10,7 @@ import { Dog } from '../dog';
   styleUrls: ['./dati.component.css']
 })
 export class DatiComponent {
-  vettoreDati: Dog[] = [];
+  @Input() vettoreDati: Dog[] = [];
   ricerca: string; 
   altreRazze: boolean;
   numeroPg: number = 0;

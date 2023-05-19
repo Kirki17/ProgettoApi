@@ -10,7 +10,6 @@ import { Dog } from '../dog';
 export class LetturaService {
 
   private currentDog !: Dog; 
-  private vettoreDati !: Dog[];
   private login : boolean; 
 
   constructor(private mioHttp: HttpClient) {
@@ -53,14 +52,6 @@ export class LetturaService {
     this.currentDog = dog; 
   }
 
-  getVettoreDati(){
-    return this.vettoreDati;
-  }
-
-  setVettoreDati(vettoreDati: Dog[]){
-    this.vettoreDati = vettoreDati;
-  }
-  
   getLogin(): boolean{
     return this.login;
   }
