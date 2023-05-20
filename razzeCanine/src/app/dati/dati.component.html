@@ -1,12 +1,12 @@
 <body>
-    <div class="bg-info bg-opacity-75 rounded sticky-top mb-4"> <!--Header-->
+    <div class="bg-info bg-opacity-75 rounded sticky-top mb-3"> <!--Header-->
         <h1 class="text-center text-primary">Razze</h1>
         <div class="d-flex justify-content-center align-self-center position-relative">
             <form>
                 <input type="image" style="height: 30px;" class="img-fluid"
                     src="https://cdn-icons-png.flaticon.com/512/3161/3161370.png">
                 <input [(ngModel)]="ricerca" id="search" type="text" [ngModelOptions]="{standalone: true}"
-                    class="rounded m-2">
+                    class="rounded m-2" placeholder="Cerca razza">
                 <button routerLink="ricerca" (click)="letturaDeiDati()"
                     class="mb-2 btn btn-outline-primary">Cerca</button>
             </form>

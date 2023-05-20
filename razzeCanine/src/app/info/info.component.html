@@ -1,64 +1,76 @@
-<div class="mx-2">
-    <div class="card mx-auto  border border-4 border-primary bg-info bg-opacity-25">
+<div class="mx-2 mb-3 tex-" style="color">
+    <div class="card mx-auto border border-4 border-success bg-success bg-opacity-25">
         <div class="card-body">
-            <h1 class="card-title text-center">{{dog.name}}</h1>
+            <h1 class="card-title text-center fw-bold text-decoration-underline">{{dog.name}}</h1>
         </div>
         <div>
             <div> <!--Img + nome-->
                 <div class="d-flex mb-2"> <!--Image + General-->
-                    <img src="{{dog.image_link}}" (click)="apri()" id="immagine" style="width: 49%" class="ms-1 img-fluid rounded border border-info">
-                    <div style="width:49%" class="container text-center border border-info rounded">
+                    <img src="{{dog.image_link}}" (click)="apri()" id="immagine" style="width: 49%"
+                        class="ms-1 img-fluid rounded border border-success">
+                    <div style="width:49%" class="container text-center bg-success bg-opacity-50 border border-success rounded">
                         <div class="row">
                             <div class="col m-2">
                                 <h1>General</h1>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col">
-                                <p>Barking: {{dog.barking}}</p>
+                            <div class="d-block col">
+                                <div>Barking:</div>
+                                <div>{{dog.barking}}</div>
                             </div>
                             <div class="col">
-                                <p>Coat length: {{dog.coat_length}}</p>
+                                <div>Coat length:</div>
+                                <div>{{dog.coat_length}}</div>
                             </div>
                             <div class="col">
-                                <p>Drooling: {{dog.drooling}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <p>Energy: {{dog.energy}}</p>
-                            </div>
-                            <div class="col">
-                                <p>Grooming: {{dog.grooming}}</p>
-                            </div>
-                            <div class="col">
-                                <p>Playfulness: {{dog.playfulness}}</p>
+                                <div>Drooling:</div>
+                                <div>{{dog.drooling}}</div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <p>Protectiveness: {{dog.protectiveness}}</p>
+                                <div>Energy:</div>
+                                <div>{{dog.energy}}</div>
                             </div>
                             <div class="col">
-                                <p>Shedding: {{dog.shedding}}</p>
+                                <div>Grooming:</div>
+                                <div>{{dog.grooming}}</div>
                             </div>
                             <div class="col">
-                                <p>Trainability: {{dog.trainability}}</p>
+                                <div>Playfulness:</div>
+                                <div>{{dog.playfulness}}</div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <p>Min life expectancy: {{dog.min_life_expectancy}}</p>
+                                <div>Protectiveness:</div>
+                                <div>{{dog.protectiveness}}</div>
                             </div>
                             <div class="col">
-                                <p>Max life expectancy: {{dog.max_life_expectancy}}</p>
+                                <div>Shedding:</div>
+                                <div>{{dog.shedding}}</div>
+                            </div>
+                            <div class="col">
+                                <div>Trainability:</div>
+                                <div>{{dog.trainability}}</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div>Min life expectancy:</div>
+                                <div>{{dog.min_life_expectancy}} years</div>
+                            </div>
+                            <div class="col">
+                                <div>Max life expectancy:</div>
+                                <div>{{dog.max_life_expectancy}} years</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div *ngIf="login; else notLog">
                     <div class="d-flex mb-2"> <!--Goodness-->
-                        <div class="container text-center border border-info rounded">
+                        <div class="container text-center border border-success bg-success bg-opacity-50 rounded">
                             <div class="row">
                                 <div class="col m-2">
                                     <h1>Goodness</h1>
@@ -66,19 +78,22 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <p>Good with children: {{dog.good_with_children}}</p>
+                                    <div>Good with children:</div>
+                                    <div>{{dog.good_with_children}}</div>
                                 </div>
                                 <div class="col">
-                                    <p>Good with other dogs: {{dog.good_with_other_dogs}}</p>
+                                    <div>Good with other dogs:</div>
+                                    <div>{{dog.good_with_other_dogs}}</div>
                                 </div>
                                 <div class="col">
-                                    <p>Good with strangers: {{dog.good_with_strangers}}</p>
+                                    <div>Good with strangers:</div>
+                                    <div>{{dog.good_with_strangers}}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="d-flex mb-2"> <!--Weight e Height-->
-                        <div class="container text-center border border-info rounded" style="width: 49%">
+                        <div class="container text-center border border-success bg-success bg-opacity-50 rounded" style="width: 49%">
                             <div class="row">
                                 <div class="col m-2">
                                     <h1>Weight</h1>
@@ -86,22 +101,26 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <p>Min heigth male: {{dog.min_weight_male}}</p>
+                                    <div>Min heigth male:</div>
+                                    <div>{{dog.min_weight_male}} pound</div>
                                 </div>
                                 <div class="col">
-                                    <p>Max heigth male: {{dog.max_weight_male}}</p>
+                                    <div>Max heigth male:</div>
+                                    <div>{{dog.max_weight_male}} pound</div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <p>Min heigth female: {{dog.min_weight_female}}</p>
+                                    <div>Min heigth female:</div>
+                                    <div>{{dog.min_weight_female}} pound</div>
                                 </div>
                                 <div class="col">
-                                    <p>Max heigth female: {{dog.max_weight_female}}</p>
+                                    <div>Max heigth female:</div>
+                                    <div>{{dog.max_weight_female}} pound</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="container text-center border border-info rounded" style="width: 49%">
+                        <div class="container text-center border border-success bg-success bg-opacity-50 rounded" style="width: 49%">
                             <div class="row">
                                 <div class="col m-2">
                                     <h1>Height</h1>
@@ -109,18 +128,22 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <p>Min height male: {{dog.min_height_male}}</p>
+                                    <div>Min height male:</div>
+                                    <div>{{dog.min_height_male}} inches</div>
                                 </div>
                                 <div class="col">
-                                    <p>Max height male: {{dog.max_height_male}}</p>
+                                    <div>Max height male:</div>
+                                    <div>{{dog.max_height_male}} inches</div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <p>Min height female: {{dog.min_height_female}}</p>
+                                    <div>Min height female</div>
+                                    <div>{{dog.min_height_female}} inches</div>
                                 </div>
                                 <div class="col">
-                                    <p>Max height female: {{dog.max_height_female}}</p>
+                                    <div>Max height female:</div>
+                                    <div>{{dog.max_height_female}} inches</div>
                                 </div>
                             </div>
                         </div>
@@ -128,7 +151,7 @@
                 </div>
                 <ng-template #notLog>
                     <div class="container text-center border border-primary bg-primary bg-opacity-50 rounded p-5 mb-1">
-                        <h2 class="fst-italic">Log in to see more details</h2>
+                        <h2 class="fst-italic ">Log in to see more details</h2>
                     </div>
                 </ng-template>
             </div>

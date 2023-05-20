@@ -11,7 +11,7 @@ import { Dog } from '../dog';
 })
 export class DatiComponent {
   vettoreDati: Dog[] = [];
-  ricerca: string; 
+  ricerca: string = ""; 
   altreRazze: boolean;
   numeroPg: number = 0;
   datiPronti: boolean;
@@ -46,7 +46,6 @@ export class DatiComponent {
       this.account = "Login"; 
     }
     //this.ricerca = "golden retriever";
-    this.ricerca = "a";
     this.stringa = ""; 
     this.urlBase = "https://api.api-ninjas.com/v1/dogs?name=";
   }
@@ -54,7 +53,7 @@ export class DatiComponent {
   letturaDeiDati() {
     this.stringa = "In attesa dei dati";
     this.vettoreDati = []; 
-    this.leggi.getDati(this.urlBase + this.ricerca + "&offset=" + this.numeroPg + "0").subscribe(dati => {
+    this.leggi.getDati(this.urlBase + this.ricerca.trim() + "&offset=" + this.numeroPg + "0").subscribe(dati => {
       if (typeof dati[0] === 'string' || dati[0] instanceof String || dati[0] == null) { //dati non arrivati 
         this.stringa = "Si è verificato un errore";
         this.vettoreDati = [];

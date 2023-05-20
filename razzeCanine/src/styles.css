@@ -2,5 +2,7 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 body{
-    background-color: rgba(180,223,242);
+    background-color: rgb(190, 231, 182);
+    color: #dcaa14;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
