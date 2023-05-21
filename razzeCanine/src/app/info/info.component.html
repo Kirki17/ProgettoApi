@@ -1,21 +1,22 @@
-<div class="mx-2 mb-3 tex-" style="color">
+<div class="mx-2 mb-3">
     <div class="card mx-auto border border-4 border-success bg-success bg-opacity-25">
         <div class="card-body">
-            <h1 class="card-title text-center fw-bold text-decoration-underline">{{dog.name}}</h1>
+            <h1 class="card-title text-center text-success fw-bold text-decoration-underline">{{dog.name}}</h1>
         </div>
         <div>
             <div> <!--Img + nome-->
                 <div class="d-flex mb-2"> <!--Image + General-->
                     <img src="{{dog.image_link}}" (click)="apri()" id="immagine" style="width: 49%"
                         class="ms-1 img-fluid rounded border border-success">
-                    <div style="width:49%" class="container text-center bg-success bg-opacity-50 border border-success rounded">
+                    <div style="width:49%"
+                        class="container text-center bg-success bg-opacity-75 border border-success rounded">
                         <div class="row">
                             <div class="col m-2">
                                 <h1>General</h1>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="d-block col">
+                            <div class="col">
                                 <div>Barking:</div>
                                 <div>{{dog.barking}}</div>
                             </div>
@@ -70,7 +71,7 @@
                 </div>
                 <div *ngIf="login; else notLog">
                     <div class="d-flex mb-2"> <!--Goodness-->
-                        <div class="container text-center border border-success bg-success bg-opacity-50 rounded">
+                        <div class="container text-center border border-success bg-success bg-opacity-75 rounded">
                             <div class="row">
                                 <div class="col m-2">
                                     <h1>Goodness</h1>
@@ -93,7 +94,8 @@
                         </div>
                     </div>
                     <div class="d-flex mb-2"> <!--Weight e Height-->
-                        <div class="container text-center border border-success bg-success bg-opacity-50 rounded" style="width: 49%">
+                        <div class="container text-center border border-success bg-success bg-opacity-75 rounded"
+                            style="width: 49%">
                             <div class="row">
                                 <div class="col m-2">
                                     <h1>Weight</h1>
@@ -120,7 +122,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="container text-center border border-success bg-success bg-opacity-50 rounded" style="width: 49%">
+                        <div class="container text-center border border-success bg-success bg-opacity-75 rounded"
+                            style="width: 49%">
                             <div class="row">
                                 <div class="col m-2">
                                     <h1>Height</h1>

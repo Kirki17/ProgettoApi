@@ -1,4 +1,4 @@
-<!--<div class="h-100 align-items-center bg-info">
+<!--<div class="h-100 align-items-center bg-warning">
     <div class="container justify-content-center align-self-center border w-50">
         <div class="justify-content-between d-flex mb-2">
             <label for="password" class="form-label align-self-center">Password</label>
@@ -9,7 +9,7 @@
             <input type="text" class="align-self-center" id="nomeUtente" [(ngModel)]="username">
         </div>
         <div class="justify-content-center d-flex">
-            <button (click)="abilita()" class="align-self-center btn btn-outline-primary">Login</button>
+            <button (click)="abilita()" class="align-self-center btn btn-outline-warning">Login</button>
         </div>
     </div>
 </div>-->
@@ -21,26 +21,26 @@
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5" style="border-radius: 1rem;">
                     <div class="card-body p-5 text-center pb-3">
                         <div class="form-outline mb-4">
-                            <label for="user" class="form-label text-center fs-2 text pb-3 text-primary">Nome
+                            <label for="user" class="form-label text-center fs-2 text pb-3 text-success">Nome
                                 utente</label>
                             <input type="email" id="user"
-                                class="border border-3 border-info bg-opacity-25 bg-info form-control form-control-lg"
+                                class="border border-3 border-success bg-opacity-25 bg-success form-control form-control-lg"
                                 placeholder="Username" [(ngModel)]="username" />
                             <!--<h1 class="form-text text-center fs-2 text pb-3 text-danger">User</h1>-->
                         </div>
 
                         <div class="form-outline mb-5">
-                            <label for="password" class="form-label text-center fs-2 text text-primary">Password</label>
+                            <label for="password" class="form-label text-center fs-2 text text-success">Password</label>
                             <input type="password" id="password"
-                                class="border border-3 border-info bg-opacity-25 bg-info form-control form-control-lg"
+                                class="border border-3 border-success bg-opacity-25 bg-success form-control form-control-lg"
                                 placeholder="Password" [(ngModel)]="password" />
                             <!--<h1 class="form-text text-center fs-2 text text-danger">Password</h1>-->
                         </div>
 
                         <div class="form-outline d-flex justify-content-around">
-                            <button class="btn btn-outline-primary btn-lg btn-block" type="submit"
+                            <button class="btn btn-outline-success border border-3 border-success btn-lg btn-block" type="submit"
                                 (click)="login()">Login</button>
-                            <button class="btn btn-outline-primary btn-lg btn-block" type="submit"
+                            <button class="btn btn-outline-success border border-3 border-success btn-lg btn-block" type="submit"
                                 (click)="register()">Register</button>
                         </div>
 
