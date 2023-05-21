@@ -19,7 +19,13 @@ export class DatiComponent {
   stringa: string;
   account: string;
   loginCheck: boolean;
+
   filtri: boolean; 
+  shedding: number = 0;
+  barking: number = 0; 
+  energy: number = 0; 
+  protectiveness: number = 0; 
+  trainability: number = 0; 
 
   ngOnInit() {
     this.leggi.setPage('/');
@@ -40,7 +46,7 @@ export class DatiComponent {
     this.loginCheck = leggi.getLogin();
     this.altreRazze = false;
     this.datiPronti = false;
-    this.filtri = true; 
+    this.filtri = false; 
     leggi.setDatiPronti(this.datiPronti);
     if (this.loginCheck) { //true = loggato
       this.account = "Loggato";
@@ -49,13 +55,31 @@ export class DatiComponent {
     }
     //this.ricerca = "golden retriever";
     this.stringa = "";
-    this.urlBase = "https://api.api-ninjas.com/v1/dogs?name=";
+    this.urlBase = 'https://api.api-ninjas.com/v1/dogs?&';
   }
 
   letturaDeiDati() {
     this.stringa = "In attesa dei dati";
+    let url: string = this.urlBase; 
+    if(this.shedding != 0){
+      url += "shedding=" + this.shedding +"&"; 
+    }
+    if(this.barking != 0){
+      url += "barking=" + this.barking +"&"; 
+    }
+    if(this.energy != 0){
+      url += "energy=" + this.energy +"&"; 
+    }
+    if(this.protectiveness != 0){
+      url += "protectiveness=" + this.protectiveness +"&"; 
+    }
+    if(this.trainability != 0){
+      url += "trainability=" + this.trainability +"&"; 
+    }
+    console.log(url + "&offset=" + this.numeroPg + "0");
+
     this.vettoreDati = [];
-    this.leggi.getDati(this.urlBase + this.ricerca.trim() + "&offset=" + this.numeroPg + "0").subscribe(dati => {
+    this.leggi.getDati(url +"name=" +this.ricerca.trim() + "&offset=" + this.numeroPg + "0").subscribe(dati => {
       if (typeof dati[0] === 'string' || dati[0] instanceof String) { //dati non arrivati 
         this.stringa = "Si è verificato un errore";
         this.vettoreDati = [];

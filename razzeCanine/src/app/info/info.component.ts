@@ -13,8 +13,7 @@ export class InfoComponent {
 
   constructor(public leggi: LetturaService){
     this.dog = this.leggi.getCurrentDog(); 
-    //this.login = this.leggi.getLogin();
-    this.login = true; 
+    this.login = this.leggi.getLogin();
     this.leggi.setLogin(this.login); 
   }
 
