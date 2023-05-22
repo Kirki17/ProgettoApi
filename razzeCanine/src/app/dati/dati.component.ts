@@ -91,10 +91,12 @@ export class DatiComponent {
         this.stringa = "";
         let id: number = 0;
         dati.forEach((doggo: any) => {
-          this.vettoreDati.push(new Dog(doggo.barking, doggo.coat_length, doggo.drooling, doggo.energy, doggo.good_with_children, doggo.good_with_other_dogs,
-            doggo.good_with_strangers, doggo.grooming, doggo.image_link, doggo.max_height_female, doggo.max_height_male, doggo.max_life_expectancy,
-            doggo.max_weight_female, doggo.max_weight_male, doggo.min_height_female, doggo.min_height_male, doggo.min_life_expectancy,
-            doggo.min_weight_female, doggo.min_weight_male, doggo.name, doggo.playfulness, doggo.protectiveness, doggo.shedding, doggo.trainability,));
+          this.vettoreDati.push(new Dog(doggo.barking, doggo.coat_length, doggo.drooling, doggo.energy, 
+            doggo.good_with_children, doggo.good_with_other_dogs, doggo.good_with_strangers, doggo.grooming, 
+            doggo.playfulness, doggo.protectiveness,doggo.shedding, doggo.trainability, doggo.image_link, 
+            doggo.max_height_female, doggo.max_height_male, doggo.max_life_expectancy, doggo.max_weight_female, 
+            doggo.max_weight_male, doggo.min_height_female, doggo.min_height_male, doggo.min_life_expectancy,
+            doggo.min_weight_female, doggo.min_weight_male, doggo.name));
         });
         //this.vettoreDati = dati;
         if (this.vettoreDati.length < 20) {

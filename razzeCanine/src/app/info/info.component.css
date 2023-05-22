@@ -1,3 +1,7 @@
+#immagine{
+    width: 49%;
+    max-height: max-content;
+}
 #immagine:hover{
     cursor: pointer;
 }
