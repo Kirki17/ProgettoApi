@@ -17,6 +17,7 @@ export class LetturaService {
   constructor(private mioHttp: HttpClient) {
     this.currentDog = new Dog(2, 1, 1, 4, 3, 1, 2, 3, 3, 5, 3, 3, "https://api-ninjas.com/images/dogs/akita.jpg", 
     28, 28, 14, 100, 130, 26, 26, 10, 70, 100, "Akita");
+    //this.currentDog = new Dog(5,5,5,5,5,5,5,5,5,5,5,5,"",5,5,5,5,5,5,5,5,5,5,"prova"); 
       this.login = false;     
       this.datiPronti = false; 
   }

@@ -14,7 +14,6 @@ export class LoginComponent {
 
   constructor(public service: LetturaService, private readonly router: Router) {
     this.service.setLogin(false);
-    console.log(localStorage);
   }
 
   ngDoCheck() {

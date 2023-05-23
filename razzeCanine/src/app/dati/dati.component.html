@@ -1,78 +1,108 @@
 <body>
     <div class="bg-success rounded sticky-top mb-3"> <!--Header-->
-        <h1 class="text-center text-warning">Razze</h1>
+        <h1 class="text-center text-warning">Breeds</h1>
         <div class="d-flex justify-content-center align-self-center position-relative">
-            <form>
+            <form class="d-flex align-items-center">
                 <input type="image" style="height: 30px;" (click)="showFiltri()" class="img-fluid align-self-center"
                     src="https://cdn-icons-png.flaticon.com/512/3161/3161370.png">
                 <input [(ngModel)]="ricerca" id="search" type="text" [ngModelOptions]="{standalone: true}"
                     class="rounded m-2 bg-white bg-opacity-25 border border-3 border-warning text-warning"
-                    placeholder="Cerca razza">
+                    placeholder="Search breeds">
                 <button routerLink="ricerca" (click)="letturaDeiDati()"
-                    class="mb-2 border border-2 border-warning btn btn-outline-warning">Cerca</button>
+                    class="border border-2 border-warning btn btn-outline-warning">Search</button>
             </form>
         </div>
         <div>
             <div *ngIf="filtri" class="comparsa d-flex justify-content-around pb-1 bg-white bg-opacity-25">
                 <div class="d-flex flex-column" style="width:15%">
-                    <label class="ps-2 mb-2 text-center" id="shedding">Shedding</label>
+                    <label class="ps-2 m-2 text-center" id="shedding">Shedding</label>
                     <!--<input class="in" type="range" name="range" ng-min="0" ng-max="1" ng-step="1" value="0">-->
                     <input class="in" [(ngModel)]="shedding" type="range" min=0 max=5 value=0 step=1>
                     <div class="d-flex justify-content-between p-0">
-                        <p class="fs-6">/</p>
-                        <p class="fs-6">1</p>
-                        <p class="fs-6">2</p>
-                        <p class="fs-6">3</p>
-                        <p class="fs-6">4</p>
-                        <p class="fs-6">5</p>
+                        <div *ngIf="shedding == 0; else s0" class="invisible">☆</div>
+                        <div *ngIf="shedding <= 0; else s1"><h5>☆</h5></div>
+                        <div *ngIf="shedding <= 1; else s2"><h5>☆</h5></div>
+                        <div *ngIf="shedding <= 2; else s3"><h5>☆</h5></div>
+                        <div *ngIf="shedding <= 3; else s4"><h5>☆</h5></div>
+                        <div *ngIf="shedding <= 4; else s5"><h5>☆</h5></div>
+                        <ng-template #s0><div class="invisible">★</div></ng-template>
+                        <ng-template #s1><div><h5>★</h5></div></ng-template>
+                        <ng-template #s2><div><h5>★</h5></div></ng-template>
+                        <ng-template #s3><div><h5>★</h5></div></ng-template>
+                        <ng-template #s4><div><h5>★</h5></div></ng-template>
+                        <ng-template #s5><div><h5>★</h5></div></ng-template>
                     </div>
                 </div>
                 <div class="d-flex flex-column" style="width:15%">
                     <label class="ps-2 m-2 text-center" id="barking">Barking</label>
                     <input class="in" [(ngModel)]="barking" type="range" min="0" max="5" value="0" step="1">
                     <div class="d-flex justify-content-between p-0">
-                        <p class="fs-6">/</p>
-                        <p class="fs-6">1</p>
-                        <p class="fs-6">2</p>
-                        <p class="fs-6">3</p>
-                        <p class="fs-6">4</p>
-                        <p class="fs-6">5</p>
+                        <div *ngIf="barking == 0; else b0" class="invisible">☆</div>
+                        <div *ngIf="barking <= 0; else b1"><h5>☆</h5></div>
+                        <div *ngIf="barking <= 1; else b2"><h5>☆</h5></div>
+                        <div *ngIf="barking <= 2; else b3"><h5>☆</h5></div>
+                        <div *ngIf="barking <= 3; else b4"><h5>☆</h5></div>
+                        <div *ngIf="barking <= 4; else b5"><h5>☆</h5></div>
+                        <ng-template #b0><div class="invisible">★</div></ng-template>
+                        <ng-template #b1><div><h5>★</h5></div></ng-template>
+                        <ng-template #b2><div><h5>★</h5></div></ng-template>
+                        <ng-template #b3><div><h5>★</h5></div></ng-template>
+                        <ng-template #b4><div><h5>★</h5></div></ng-template>
+                        <ng-template #b5><div><h5>★</h5></div></ng-template>
                     </div>
                 </div>
                 <div class="d-flex flex-column" style="width:15%">
                     <label class="ps-2 m-2 text-center" id="energy">Energy</label>
                     <input class="in" [(ngModel)]="energy" type="range" min="0" max="5" value="0" step="1">
                     <div class="d-flex justify-content-between p-0">
-                        <p class="fs-6">/</p>
-                        <p class="fs-6">1</p>
-                        <p class="fs-6">2</p>
-                        <p class="fs-6">3</p>
-                        <p class="fs-6">4</p>
-                        <p class="fs-6">5</p>
+                        <div *ngIf="energy == 0; else e0" class="invisible">☆</div>
+                        <div *ngIf="energy <= 0; else e1"><h5>☆</h5></div>
+                        <div *ngIf="energy <= 1; else e2"><h5>☆</h5></div>
+                        <div *ngIf="energy <= 2; else e3"><h5>☆</h5></div>
+                        <div *ngIf="energy <= 3; else e4"><h5>☆</h5></div>
+                        <div *ngIf="energy <= 4; else e5"><h5>☆</h5></div>
+                        <ng-template #e0><div class="invisible">★</div></ng-template>
+                        <ng-template #e1><div><h5>★</h5></div></ng-template>
+                        <ng-template #e2><div><h5>★</h5></div></ng-template>
+                        <ng-template #e3><div><h5>★</h5></div></ng-template>
+                        <ng-template #e4><div><h5>★</h5></div></ng-template>
+                        <ng-template #e5><div><h5>★</h5></div></ng-template>
                     </div>
                 </div>
                 <div class="d-flex flex-column" style="width:15%">
                     <label class="ps-2 m-2 text-center" id="protectiveness">Protectiveness</label>
                     <input class="in" [(ngModel)]="protectiveness" type="range" min="0" max="5" value="0" step="1">
                     <div class="d-flex justify-content-between p-0">
-                        <p class="fs-6">/</p>
-                        <p class="fs-6">1</p>
-                        <p class="fs-6">2</p>
-                        <p class="fs-6">3</p>
-                        <p class="fs-6">4</p>
-                        <p class="fs-6">5</p>
+                        <div *ngIf="protectiveness == 0; else p0" class="invisible">☆</div>
+                        <div *ngIf="protectiveness <= 0; else p1"><h5>☆</h5></div>
+                        <div *ngIf="protectiveness <= 1; else p2"><h5>☆</h5></div>
+                        <div *ngIf="protectiveness <= 2; else p3"><h5>☆</h5></div>
+                        <div *ngIf="protectiveness <= 3; else p4"><h5>☆</h5></div>
+                        <div *ngIf="protectiveness <= 4; else p5"><h5>☆</h5></div>
+                        <ng-template #p0><div class="invisible">★</div></ng-template>
+                        <ng-template #p1><div><h5>★</h5></div></ng-template>
+                        <ng-template #p2><div><h5>★</h5></div></ng-template>
+                        <ng-template #p3><div><h5>★</h5></div></ng-template>
+                        <ng-template #p4><div><h5>★</h5></div></ng-template>
+                        <ng-template #p5><div><h5>★</h5></div></ng-template>
                     </div>
                 </div>
                 <div class="d-flex flex-column" style="width:15%">
                     <label class="ps-2 m-2 text-center" id="trainability">Trainability</label>
                     <input class="in" [(ngModel)]="trainability" type="range" min="0" max="5" value="0" step="1">
                     <div class="d-flex justify-content-between p-0">
-                        <p class="fs-6">/</p>
-                        <p class="fs-6">1</p>
-                        <p class="fs-6">2</p>
-                        <p class="fs-6">3</p>
-                        <p class="fs-6">4</p>
-                        <p class="fs-6">5</p>
+                        <div *ngIf="trainability == 0; else t0" class="invisible">☆</div>
+                        <div *ngIf="trainability <= 0; else t1"><h5>☆</h5></div>
+                        <div *ngIf="trainability <= 1; else t2"><h5>☆</h5></div>
+                        <div *ngIf="trainability <= 2; else t3"><h5>☆</h5></div>
+                        <div *ngIf="trainability <= 3; else t4"><h5>☆</h5></div>
+                        <div *ngIf="trainability <= 4; else t5"><h5>☆</h5></div>
+                        <ng-template #t0><div class="invisible">★</div></ng-template>
+                        <ng-template #t1><div><h5>★</h5></div></ng-template>
+                        <ng-template #t2><div><h5>★</h5></div></ng-template>
+                        <ng-template #t3><div><h5>★</h5></div></ng-template>
+                        <ng-template #t4><div><h5>★</h5></div></ng-template>
+                        <ng-template #t5><div><h5>★</h5></div></ng-template>
                     </div>
                 </div>
             </div>
@@ -106,12 +136,13 @@
     <div *ngIf="datiPronti" class="position-relative">
         <div class="d-flex justify-content-between">
             <div class="d-flex flex-column">
-                <button *ngIf="numeroPg>0" (click)="paginaPrecedente()" class="mb-2 ms-4 btn btn-primary">Pagina
-                    precedente</button>
+                <button *ngIf="numeroPg>0" (click)="paginaPrecedente()" class="mb-3 ms-4 btn btn-warning">Previous
+                    page</button>
             </div>
             <div class="flex-column justify-content-center align-items-center">
-                <button *ngIf="altreRazze" (click)="paginaSuccessiva()" class=" mb-2 me-4 btn btn-primary">Pagina
-                    successiva</button>
+                <button *ngIf="altreRazze" (click)="paginaSuccessiva()" class=" mb-3 me-4 btn btn-warning">Next 
+                    page
+                </button>
             </div>
         </div>
     </div>

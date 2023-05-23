@@ -36,7 +36,7 @@ export class DatiComponent {
     this.loginCheck = this.leggi.getLogin();
     this.datiPronti = this.leggi.getDatiPronti();
     if (this.loginCheck) { //true = loggato
-      this.account = "Loggato";
+      this.account = "Login ✔";
     } else {
       this.account = "Login";
     }
@@ -59,7 +59,8 @@ export class DatiComponent {
   }
 
   letturaDeiDati() {
-    this.stringa = "In attesa dei dati";
+    this.stringa = "Waiting for the data";
+    this.numeroPg = 0; 
     let url: string = this.urlBase; 
     if(this.shedding != 0){
       url += "shedding=" + this.shedding +"&"; 
@@ -81,12 +82,12 @@ export class DatiComponent {
     this.vettoreDati = [];
     this.leggi.getDati(url +"name=" +this.ricerca.trim() + "&offset=" + this.numeroPg + "0").subscribe(dati => {
       if (typeof dati[0] === 'string' || dati[0] instanceof String) { //dati non arrivati 
-        this.stringa = "Si è verificato un errore";
+        this.stringa = "Something went wrong";
         this.vettoreDati = [];
         this.datiPronti = false;
         this.leggi.setDatiPronti(this.datiPronti);
       } else if(dati[0] == null){
-        this.stringa = "Nessuna corrispondenza";
+        this.stringa = "No breeds found";
       }else { //dati arrivati correttamente
         this.stringa = "";
         let id: number = 0;

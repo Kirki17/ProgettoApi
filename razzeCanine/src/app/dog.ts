@@ -3,6 +3,7 @@ export class Dog {
     coat_length: string = "";
     drooling: string = "";
     energy: string = "";
+    
     good_with_children: string = "";
     good_with_other_dogs: string = "";
     good_with_strangers: string = "";
