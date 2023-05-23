@@ -12,10 +12,15 @@
                     class="border border-2 border-warning btn btn-outline-warning">Search</button>
             </form>
         </div>
-        <div>
-            <div *ngIf="filtri" class="comparsa d-flex justify-content-around pb-1 bg-white bg-opacity-25">
+        <div *ngIf="filtri" class="d-flex justify-content-around pb-1 bg-white bg-opacity-25">
+            <div *ngIf="!loginCheck; else logged">
+                <div class="container text-center mt-2 m-1">
+                    <h4 class="fst-italic ">Login to enable this feature</h4>
+                </div>
+            </div>
+            <ng-template #logged>
                 <div class="d-flex flex-column" style="width:15%">
-                    <label class="ps-2 m-2 text-center" id="shedding">Shedding</label>
+                    <label class="ps-2 m-2 text-center" id="shedding">Shedding 🧹</label>
                     <!--<input class="in" type="range" name="range" ng-min="0" ng-max="1" ng-step="1" value="0">-->
                     <input class="in" [(ngModel)]="shedding" type="range" min=0 max=5 value=0 step=1>
                     <div class="d-flex justify-content-between p-0">
@@ -34,7 +39,7 @@
                     </div>
                 </div>
                 <div class="d-flex flex-column" style="width:15%">
-                    <label class="ps-2 m-2 text-center" id="barking">Barking</label>
+                    <label class="ps-2 m-2 text-center" id="barking">Barking 🔊</label>
                     <input class="in" [(ngModel)]="barking" type="range" min="0" max="5" value="0" step="1">
                     <div class="d-flex justify-content-between p-0">
                         <div *ngIf="barking == 0; else b0" class="invisible">☆</div>
@@ -52,7 +57,7 @@
                     </div>
                 </div>
                 <div class="d-flex flex-column" style="width:15%">
-                    <label class="ps-2 m-2 text-center" id="energy">Energy</label>
+                    <label class="ps-2 m-2 text-center" id="energy">Energy 🔋</label>
                     <input class="in" [(ngModel)]="energy" type="range" min="0" max="5" value="0" step="1">
                     <div class="d-flex justify-content-between p-0">
                         <div *ngIf="energy == 0; else e0" class="invisible">☆</div>
@@ -70,7 +75,7 @@
                     </div>
                 </div>
                 <div class="d-flex flex-column" style="width:15%">
-                    <label class="ps-2 m-2 text-center" id="protectiveness">Protectiveness</label>
+                    <label class="ps-2 m-2 text-center" id="protectiveness">Protectiveness 👿</label>
                     <input class="in" [(ngModel)]="protectiveness" type="range" min="0" max="5" value="0" step="1">
                     <div class="d-flex justify-content-between p-0">
                         <div *ngIf="protectiveness == 0; else p0" class="invisible">☆</div>
@@ -88,7 +93,7 @@
                     </div>
                 </div>
                 <div class="d-flex flex-column" style="width:15%">
-                    <label class="ps-2 m-2 text-center" id="trainability">Trainability</label>
+                    <label class="ps-2 m-2 text-center" id="trainability">Trainability 🏋️‍♂️</label>
                     <input class="in" [(ngModel)]="trainability" type="range" min="0" max="5" value="0" step="1">
                     <div class="d-flex justify-content-between p-0">
                         <div *ngIf="trainability == 0; else t0" class="invisible">☆</div>
@@ -105,8 +110,9 @@
                         <ng-template #t5><div><h5>★</h5></div></ng-template>
                     </div>
                 </div>
-            </div>
+            </ng-template>
         </div>
+
         <div *ngIf="loginCheck; else notLog">
             <button
                 class="mb-2 border border-2 border-warning btn btn-outline-warning position-absolute top-0 end-0 m-3">{{account}}</button>
