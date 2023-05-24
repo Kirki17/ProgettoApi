@@ -65,7 +65,7 @@ export class InfoComponent {
       }
 
       if (this.dog.energy == "★★★★☆" || this.dog.energy == "★★★★★") {
-        this.ener = "💦";
+        this.ener = "🔋";
       } else {
         this.ener = "";
       }
